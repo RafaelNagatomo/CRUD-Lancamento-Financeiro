@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/release.css">
+    <link rel="stylesheet" href="../css/settings.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <title>ManagerMoney | Financial Management</title>
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <header>
+            <img class="logo-img" src="../img/Design_sem_nome-removebg-preview1.png" alt="logo">
+            <p class="brand">ManagMon</p>
+        </header>
+
+        <nav>
+
+            <button id="b-dashboard" onclick="exibeMenuDashboard()">
+                <span>
+                    <i class="material-symbols-outlined">grid_view</i>
+                    <span>Dashboard</span>
+                </span>
+            </button>
+
+            <button id="b-releases" onclick="exibeMenuRelease()">
+                <span>
+                    <i class="material-symbols-outlined">download</i>
+                    <span>Releases</span>
+                </span>
+            </button>
+
+            <button id="b-budget" onclick="exibeMenuBudget()">
+                <span>
+                    <i class="material-symbols-outlined">monetization_on</i>
+                    <span>Budget</span>
+                </span>
+            </button>
+
+            <button id="b-settings" onclick="exibeMenuSettings()">
+                <span>
+                    <i class="material-symbols-outlined">settings</i>
+                    <span>Settings</span>
+                </span>
+            </button>
+
+        </nav>
+    </aside>
+
+    <div id="dashboard" class="main">
+        <span>Dashboard</span>
+
+    </div>
+
+    <div id="releases" class="main">
+        <span>Releases</span>
+
+        <form action="" method="post">
+            <div class="form-header">Add a new release</div>
+            <div class="form">
+                <label for="date">Date</label>
+                <input type="date" name="date" id="form-date">
+
+                <label for="op">Operation</label>
+                <div class="switch-field">
+                    <input type="radio" id="radio-one" name="switch-one" value="Income" checked />
+                    <label for="radio-one">Income</label>
+                    <input type="radio" id="radio-two" name="switch-one" value="Expense" />
+                    <label for="radio-two">Expense</label>
+                </div>
+
+                <label for="op">Description</label>
+                <input type="text" name="op">
+
+                <label for="op">Type</label>
+                <input type="text" name="op">
+
+                <label for="op">Category</label>
+                <input type="text" name="op">
+
+                <label for="op">Value</label>
+                <input type="text" name="op">
+
+                <button class="b-input" type="submit" value="Input">Input</button>
+            </div>
+        </form>
+
+        <table class="r-Crud">
+            <tr class="r-crudHead">
+                <th>Date</th>
+                <th>Operation</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Value</th>
+                <th></th>
+            </tr>
+            <tr class="r-CrudRow">
+                <td>20/9/2023</td>
+                <td>Income</td>
+                <td>Fixo</td>
+                <td>Mercado</td>
+                <td>Alimentação</td>
+                <td>20200</td>
+                <td>
+                    <i id="i-edit" class="material-symbols-outlined">edit_note</i>
+                    <i id="i-del" class="material-symbols-outlined">delete</i>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div id="budget" class="main">
+        <span>Budget</span>
+
+    </div>
+    
+    <div id="settings" class="main">
+        <span>Settings</span>
+    </div>
+
+    <script>
+
+        exibeMenuRelease()
+
+        // Function to set every div's display "none" and
+        // to remove every sidebar's buttons class "selected"
+        function noneRemove() {
+
+            var classMain = document.querySelectorAll(".main");
+            var butons = document.querySelectorAll("nav > button");
+
+            classMain.forEach(eClassMain => {
+                eClassMain.style.display = 'none';
+            });
+
+            butons.forEach(eButons => {
+                eButons.classList.remove("selected")
+            });
+        }
+
+        //display menu Dashboard
+        function exibeMenuDashboard() {
+
+            noneRemove()
+            document.getElementById("dashboard").style.display = 'block';
+            document.getElementById("b-dashboard").classList.add("selected");
+        }
+
+        //display menu Release
+        function exibeMenuRelease() {
+
+            noneRemove()
+            document.getElementById("releases").style.display = 'block';
+            document.getElementById("b-releases").classList.add("selected");
+        }
+
+        //display menu Budget
+        function exibeMenuBudget() {
+
+            noneRemove()
+            document.getElementById("budget").style.display = 'block';
+            document.getElementById("b-budget").classList.add("selected");
+        }
+
+        //display menu Settings
+        function exibeMenuSettings() {
+
+            noneRemove()
+            document.getElementById("settings").style.display = 'block';
+            document.getElementById("b-settings").classList.add("selected");
+        }
+    </script>
+</body>
+
+</html>
