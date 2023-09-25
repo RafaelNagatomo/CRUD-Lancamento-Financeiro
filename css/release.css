@@ -151,28 +151,38 @@ form {
 /* Table Release Crud ------------- */
 .r-crudHead{
     display: flex;
-    width: 1120px;
+    width: 1220px;
     background: linear-gradient(to right, #33355E, #242B39);
     margin-top: 50px;
-    padding: 10px 50px 10px 50px;
+    padding: 10px 0px 10px 0px;
     border-radius: 15px 15px 0 0;
     font-size: 16px;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+}
+
+.r-crudHead th{
+    text-align: start;
+    width: 150px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .r-CrudRow{
     height: 16px;
     display: flex;
-    width: 1120px;
+    width: 1220px;
     background: linear-gradient(to right, #818a91, #D8D8D8);
-    padding: 8px 50px 8px 50px;
+    padding: 8px 0px 8px 0px;
     font-size: 14px;
-    /* justify-content: space-between; */
 }
 
 .r-CrudRow td{
     color: black;
     font-weight: normal;
+    text-align: start;
+    width: 150px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #i-edit{
@@ -181,6 +191,7 @@ form {
     cursor: pointer;
     position: relative;
     top: -4px;
+    margin-left: 50px;
 }
 
 #i-del {
@@ -188,5 +199,5 @@ form {
     cursor: pointer;
     position: relative;
     top: -5px;
-    left: 10px;
+    left: 20px;
 }
