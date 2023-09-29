@@ -1,11 +1,11 @@
 exibeMenuRelease()
 
 // Function to set every div's display "none" and
-// to remove every sidebar's buttons class "selected"
+// remove every sidebar's buttons class "selected"
 function noneRemove() {
 
-    var classMain = document.querySelectorAll(".main");
-    var butons = document.querySelectorAll("nav > button");
+    let classMain = document.querySelectorAll(".main");
+    let butons = document.querySelectorAll("nav > button");
 
     classMain.forEach(eClassMain => {
         eClassMain.style.display = 'none';
