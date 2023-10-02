@@ -43,7 +43,7 @@ form {
     outline: none;
 }
 
-.b-input {
+#r-btnInput {
     width: 140px;
     height: 27px;
     margin-top: 25px;
@@ -94,7 +94,7 @@ form {
     transform: translateX(70px);
 }
 
-.b-input:hover{
+#r-btnInput:hover{
     background: #7277cf;
     cursor: pointer;
 }

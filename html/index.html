@@ -67,8 +67,8 @@
         <form action="" method="post">
             <div class="form-header">Add a new release</div>
             <div class="form">
-                <label for="date">Date</label>
-                <input type="date" name="date" id="form-date">
+                <label for="r-Crud">Date</label>
+                <input  id="r-date" type="date">
 
                 <label for="op">Operation</label>
                 <div class="switch-field">
@@ -78,19 +78,19 @@
                     <label for="radio-two">Expense</label>
                 </div>
 
-                <label for="op">Description</label>
-                <input type="text" name="op">
+                <label for="r-description">Description</label>
+                <input id="r-description" type="text" required >
 
-                <label for="op">Type</label>
-                <input type="text" name="op">
+                <label for="r-type">Type</label>
+                <input id="r-type" type="text" required >
 
-                <label for="op">Category</label>
-                <input type="text" name="op">
+                <label for="r-category">Category</label>
+                <input id="r-category" type="text" required >
 
-                <label for="op">Value</label>
-                <input type="text" name="op">
+                <label for="r-value">Value</label>
+                <input id="r-value" type="number" required >
 
-                <button class="b-input" type="submit" value="Input">Input</button>
+                <button id="r-btnInput">Input</button>
             </div>
         </form>
 
@@ -129,7 +129,9 @@
         <span>Settings</span>
     </div>
 
-    <script src="../js/release.js">
+    <script src="../js/menu.js"
+            src="../js/release.js">
+        
     </script>
 </body>
 
