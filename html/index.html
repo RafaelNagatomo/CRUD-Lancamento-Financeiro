@@ -67,10 +67,10 @@
         <form action="" method="post">
             <div class="form-header">Add a new release</div>
             <div class="form">
-                <label for="r-Crud">Date</label>
-                <input  id="r-date" type="date">
+                <label for="r-date">Date</label>
+                <input id="r-date" type="date">
 
-                <label for="op">Operation</label>
+                <span>Operation</span>
                 <div class="switch-field">
                     <input type="radio" id="radio-one" name="switch-one" value="Income" checked />
                     <label for="radio-one">Income</label>
@@ -79,23 +79,23 @@
                 </div>
 
                 <label for="r-description">Description</label>
-                <input id="r-description" type="text" required >
+                <input id="r-description" type="text">
 
                 <label for="r-type">Type</label>
-                <input id="r-type" type="text" required >
+                <input id="r-type" type="text">
 
                 <label for="r-category">Category</label>
-                <input id="r-category" type="text" required >
+                <input id="r-category" type="text">
 
                 <label for="r-value">Value</label>
-                <input id="r-value" type="number" required >
+                <input id="r-value" type="number">
 
                 <button id="r-btnInput">Input</button>
             </div>
         </form>
 
         <table class="r-Crud">
-            <tr class="r-crudHead">
+            <thead id="r-crudHead">
                 <th>Date</th>
                 <th>Operation</th>
                 <th>Description</th>
@@ -103,19 +103,21 @@
                 <th>Category</th>
                 <th>Value</th>
                 <th></th>
-            </tr>
-            <tr class="r-CrudRow">
-                <td>20/9/2023</td>
-                <td>Expense</td>
-                <td>Fixo</td>
-                <td>Mercado</td>
-                <td>Alimentação</td>
-                <td>$20200</td>
-                <td>
-                    <i id="i-edit" class="material-symbols-outlined">edit_note</i>
-                    <i id="i-del" class="material-symbols-outlined">delete</i>
-                </td>
-            </tr>
+            </thead>
+            <tbody id="r-CrudRow">
+                <tr>
+                    <td>20/9/2023</td>
+                    <td>Expense</td>
+                    <td>Fixo</td>
+                    <td>Mercado</td>
+                    <td>Alimentação</td>
+                    <td>$20200</td>
+                    <td>
+                        <i id="i-edit" class="material-symbols-outlined">edit_note</i>
+                        <i id="i-del" class="material-symbols-outlined">delete</i>
+                    </td>
+                </tr>
+            </tbody>
         </table>
 
     </div>
@@ -124,14 +126,13 @@
         <span>Budget</span>
 
     </div>
-    
+
     <div id="settings" class="main">
         <span>Settings</span>
     </div>
 
-    <script src="../js/menu.js"
-            src="../js/release.js">
-        
+    <script src="../js/menu.js" src="../js/release.js">
+
     </script>
 </body>
 
