@@ -47,3 +47,4 @@ function exibeMenuSettings() {
     document.getElementById("settings").style.display = 'block';
     document.getElementById("b-settings").classList.add("selected");
 }
+
