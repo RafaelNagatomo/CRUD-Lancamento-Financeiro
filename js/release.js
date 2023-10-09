@@ -7,43 +7,53 @@ const lValue = document.querySelector('#r-value')
 const btnInput = document.querySelector('#r-btnInput')
 
 let op
-// let id = index
-let index = 0
 
+//Funçao checa botao radio no formulario e imprime valor "Income" ou "Expense"
 
 const chkRadioBtn = () => {
-  if (document.querySelector('#radio-one').checked){
+  if (document.querySelector('#radio-one').checked) {
     op = document.querySelector('#radio-one').value;
   }
-  if(document.querySelector('#radio-two').checked){
+  if (document.querySelector('#radio-two').checked) {
     op = document.querySelector('#radio-two').value;
   }
 }
 
+// Insere uma linha no CRUD com os valores do formulario
 
-function insertItem(index) {
+function insertItem(id) {
   let tr = document.createElement('tr')
 
   tr.innerHTML = `
-    <td>${lDate.value}</td>
-    <td>${op}</td>
-    <td>${lDescription.value}</td>
-    <td>${lType.value}</td>
-    <td>${lCategory.value}</td>
-    <td>R$${lValue.value}</td>
-    <td>
-      <i onclick="editItem(${index})" id="i-edit" class="material-symbols-outlined">edit_note</i>
-      <i onclick="editItem(${index})" id="i-del" class="material-symbols-outlined">delete</i>
-    </td>
-  `
-  tr.classList = ""
+  <td>${lDate.value}</td>
+  <td>${op}</td>
+  <td>${lDescription.value}</td>
+  <td>${lType.value}</td>
+  <td>${lCategory.value}</td>
+  <td>R$${lValue.value}</td>
+  <td>
+  <i onclick="editItem(${id})" id="i-edit" class="material-symbols-outlined">edit_note</i>
+      <i onclick="editItem(${id})" id="i-del" class="material-symbols-outlined">delete</i>
+      </td>
+      `
   tbody.appendChild(tr)
+
+
 }
 
+
+//Checa botao radio, insere linha no CRUD, apaga valores do formulario
+
 btnInput.onclick = e => {
-  chkRadioBtn()
+
+  let data = []
+  let item = { id: data.length + 1, Date: lDate.value, Description: lDescription.value, Type: lType.value, Category: lCategory.value, Value: lValue.value }
+
+  data.push = (item)
+
+  chkRadioBtn();
   insertItem();
-  
+
   lDate.value = ""
   lDescription.value = ""
   lType.value = ""
