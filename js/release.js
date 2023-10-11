@@ -7,8 +7,7 @@ const lValue = document.querySelector('#r-value')
 const btnInput = document.querySelector('#r-btnInput')
 
 let op
-let id
-const data = []
+const itens = []
 
 //Funçao checa botao radio no formulario e imprime valor "Income" ou "Expense"
 
@@ -21,33 +20,45 @@ const chkRadioBtn = () => {
   }
 }
 
-// Insere uma linha no CRUD com os valores do formulario
+// Insere uma linha no CRUD com os valores array
 
-function insertItem(id) {
+function insertItem(item, index) {
 
   tbody.insertAdjacentHTML("afterbegin",
     `<tr>
-        <td>${lDate.value}</td>
-        <td>${op}</td>
-        <td>${lDescription.value}</td>
-        <td>${lType.value}</td>
-        <td>${lCategory.value}</td>
-        <td>R$${lValue.value}</td>
-        <td>
-          <i onclick="editItem(${id})" id="i-edit" class="material-symbols-outlined">edit_note</i>
-          <i onclick="delItem(${id})" id="i-del" class="material-symbols-outlined">delete</i>
-        </td>
-      </tr>`)
+  <td>${item.date}</td>
+  <td>${item.operation}</td>
+  <td>${item.description}</td>
+  <td>${item.type}</td>
+  <td>${item.category}</td>
+  <td>R$${item.value}</td>
+  <td>
+  <i onclick="editItem(${index})" id="i-edit" class="material-symbols-outlined">edit_note</i>
+  <i onclick="delItem(${index})" id="i-del" class="material-symbols-outlined">delete</i>
+  </td>
+  </tr>`)
 }
 
-//Checa botao radio, insere linha no CRUD, apaga valores do formulario
+
+function delItem(index) {
+  itens.splice(index, 1)
+  loadItens()
+}
+
+function loadItens() {
+  tbody.innerHTML = ''
+  itens.forEach((item, index) => {
+    insertItem(item, index)
+  })
+}
 
 btnInput.onclick = e => {
-
+  
   chkRadioBtn();
-  insertItem();
 
-  data.push({ id: data.length, 'Date': lDate.value, 'Description': lDescription.value, 'Type': lType.value, 'Category': lCategory.value, 'Value': lValue.value })
+  itens.push({ 'date': lDate.value, 'operation': op, 'description': lDescription.value, 'type': lType.value, 'category': lCategory.value, 'value': lValue.value });
+
+  loadItens();
 
   lDate.value = ""
   lDescription.value = ""
