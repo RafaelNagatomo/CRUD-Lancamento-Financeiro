@@ -151,7 +151,7 @@ form {
 /* Table Release Crud ------------- */
 #r-crudHead{
     display: flex;
-    width: 1200px;
+    /* width: 1200px; */
     background: linear-gradient(to right, #33355E, #242B39);
     margin-top: 50px;
     padding: 10px 0px 10px 0px;
@@ -162,7 +162,7 @@ form {
 
 #r-crudHead th{
     text-align: start;
-    width: 150px;
+    width: 167px;
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -170,7 +170,7 @@ form {
 #r-CrudRow{
     display: flex;
     flex-direction: column;
-    width: 1200px;
+    /* width: 1200px; */
     background: linear-gradient(to right, #818a91, #D8D8D8);
     font-size: 14px;
     padding-left: 20px;
@@ -180,7 +180,7 @@ form {
     color: black;
     font-weight: normal;
     text-align: start;
-    width: 150px;
+    width: 167px;
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -191,12 +191,12 @@ form {
     cursor: pointer;
     position: relative;
     top: 3px;
-    margin-left: 50px;
+    margin-left: 70px;
 }
 
 #i-del {
     color: rgba(255, 0, 0, 0.7);
     cursor: pointer;
     position: relative;
-    left: 20px;
+    left: 10px;
 }

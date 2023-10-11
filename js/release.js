@@ -7,6 +7,8 @@ const lValue = document.querySelector('#r-value')
 const btnInput = document.querySelector('#r-btnInput')
 
 let op
+let id
+const data = []
 
 //Funçao checa botao radio no formulario e imprime valor "Income" ou "Expense"
 
@@ -33,7 +35,7 @@ function insertItem(id) {
         <td>R$${lValue.value}</td>
         <td>
           <i onclick="editItem(${id})" id="i-edit" class="material-symbols-outlined">edit_note</i>
-          <i onclick="editItem(${id})" id="i-del" class="material-symbols-outlined">delete</i>
+          <i onclick="delItem(${id})" id="i-del" class="material-symbols-outlined">delete</i>
         </td>
       </tr>`)
 }
@@ -44,6 +46,8 @@ btnInput.onclick = e => {
 
   chkRadioBtn();
   insertItem();
+
+  data.push({ id: data.length, 'Date': lDate.value, 'Description': lDescription.value, 'Type': lType.value, 'Category': lCategory.value, 'Value': lValue.value })
 
   lDate.value = ""
   lDescription.value = ""
