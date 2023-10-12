@@ -7,16 +7,16 @@ const lValue = document.querySelector('#r-value')
 const btnInput = document.querySelector('#r-btnInput')
 
 let op
-const itens = []
+const data = []
 
 //Funçao checa botao radio no formulario e imprime valor "Income" ou "Expense"
 
 const chkRadioBtn = () => {
   if (document.querySelector('#radio-one').checked) {
-    op = document.querySelector('#radio-one').value;
+    op = document.querySelector('#radio-one').value
   }
   if (document.querySelector('#radio-two').checked) {
-    op = document.querySelector('#radio-two').value;
+    op = document.querySelector('#radio-two').value
   }
 }
 
@@ -25,7 +25,7 @@ const chkRadioBtn = () => {
 function insertItem(item, index) {
 
   tbody.insertAdjacentHTML("afterbegin",
-    `<tr>
+    `<tr id:"row-${index}">
   <td>${item.date}</td>
   <td>${item.operation}</td>
   <td>${item.description}</td>
@@ -39,26 +39,40 @@ function insertItem(item, index) {
   </tr>`)
 }
 
+function editItem(index) {
+
+  let row = document.querySelector(`#row-${index}`)
+
+}
 
 function delItem(index) {
-  itens.splice(index, 1)
-  loadItens()
+
+  let result = confirm("Are you sure, you want to delete this item?")
+
+  if (result == true) {
+    data.splice(index, 1)
+    loadItens()
+  }
+
 }
 
 function loadItens() {
+
   tbody.innerHTML = ''
-  itens.forEach((item, index) => {
+  
+  data.forEach((item, index) => {
     insertItem(item, index)
+
   })
 }
 
 btnInput.onclick = e => {
-  
-  chkRadioBtn();
 
-  itens.push({ 'date': lDate.value, 'operation': op, 'description': lDescription.value, 'type': lType.value, 'category': lCategory.value, 'value': lValue.value });
+  chkRadioBtn()
 
-  loadItens();
+  data.push({ 'date': lDate.value, 'operation': op, 'description': lDescription.value, 'type': lType.value, 'category': lCategory.value, 'value': lValue.value })
+
+  loadItens()
 
   lDate.value = ""
   lDescription.value = ""

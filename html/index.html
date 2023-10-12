@@ -72,7 +72,7 @@
 
                 <span>Operation</span>
                 <div class="switch-field">
-                    <input type="radio" id="radio-one" name="switch-one" value="Income"/>
+                    <input type="radio" id="radio-one" name="switch-one" value="Income" />
                     <label for="radio-one">Income</label>
                     <input type="radio" id="radio-two" name="switch-one" value="Expense" />
                     <label for="radio-two">Expense</label>
@@ -108,6 +108,20 @@
             </tbody>
         </table>
 
+        <div class="modal-edit">
+            <input id="r-date" type="date">
+            <div class="switch-field">
+                <input type="radio" id="radio-one" name="switch-one" value="Income" />
+                <label for="radio-one">Income</label>
+                <input type="radio" id="radio-two" name="switch-one" value="Expense" />
+                <label for="radio-two">Expense</label>
+            </div>
+            <input id="r-description" type="text">
+            <input id="r-type" type="text">
+            <input id="r-category" type="text">
+            <input id="r-value" type="number">
+        </div>
+
     </div>
 
     <div id="budget" class="main">
@@ -121,7 +135,7 @@
 
     <script src="../js/menu.js"></script>
     <script src="../js/release.js"></script>
-    
+
 </body>
 
 </html>
