@@ -4,16 +4,16 @@ exibeMenuRelease()
 // remove every sidebar's buttons class "selected"
 function noneRemove() {
 
-    let classMain = document.querySelectorAll(".main");
-    let butons = document.querySelectorAll("nav > button");
+    let classMain = document.querySelectorAll(".main")
+    let butons = document.querySelectorAll("nav > button")
 
     classMain.forEach(eClassMain => {
-        eClassMain.style.display = 'none';
-    });
+        eClassMain.style.display = 'none'
+    })
 
     butons.forEach(eButons => {
         eButons.classList.remove("selected")
-    });
+    })
 }
 
 //display menu Dashboard

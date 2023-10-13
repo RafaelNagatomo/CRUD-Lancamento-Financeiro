@@ -25,7 +25,7 @@ const chkRadioBtn = () => {
 function insertItem(item, index) {
 
   tbody.insertAdjacentHTML("afterbegin",
-    `<tr id:"row-${index}">
+    `<tr id="row-${index}">
   <td>${item.date}</td>
   <td>${item.operation}</td>
   <td>${item.description}</td>
@@ -41,7 +41,15 @@ function insertItem(item, index) {
 
 function editItem(index) {
 
-  let row = document.querySelector(`#row-${index}`)
+  const modalEdit = document.getElementById("modal-edit")
+  const rowEdit = document.querySelector(`#row-${index}`)
+  const rowTop = document.querySelector(`#row-${index}`).getBoundingClientRect().top
+  
+  modalEdit.style.display = 'flex'
+  modalEdit.style.top = rowTop + 4 + 'px'
+  rowEdit.style.opacity = "0.25"
+  rowEdit.style.zIndex = '-1';
+  rowEdit.style.color = '#d9d9d903';
 
 }
 

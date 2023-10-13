@@ -1,12 +1,10 @@
 * {
-    color: #d8d8d8;
-    /* background: #132531; */
 }
 
 html {
+    color: #d8d8d8;
     font-family: sans-serif;
     background: linear-gradient(to right, #132531, #9F9EB9);
-    /* color: #d8d8d8; */
 }
 
 .logo-img {
@@ -46,6 +44,7 @@ html {
 }
 
 .sidebar button {
+    color: #d8d8d8;
     width: 170px;
     height: 40px;
     border-radius: 8px;
