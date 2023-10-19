@@ -56,7 +56,7 @@ function insertItem(item, index) {
 
 function editItem(index) {
 
-  const backgroundEdit = document.querySelector('#back-edit')
+  // const backgroundEdit = document.querySelector('#back-edit')
   const rowEdit = document.querySelector(`#row-${index}`)
   const rowTop = document.querySelector(`#row-${index}`).getBoundingClientRect().top
 
@@ -66,7 +66,7 @@ function editItem(index) {
   rowEdit.style.zIndex = '-1'
   rowEdit.style.color = '#d9d9d901'
 
-  backgroundEdit.style.display = 'block'
+  // backgroundEdit.style.display = 'block'
 
   modalInputDate.value = data[index].date
   modalInputOperation.value = data[index].operation
@@ -97,11 +97,7 @@ function editItem(index) {
     loadItens()
 
   }
-
-
 }
-
-
 
 function delItem(index) {
 
@@ -138,12 +134,11 @@ btnInput.onclick = e => {
     'value': formInputValue.value
   })
 
-  loadItens()
-
   formInputDate.value = ""
   formInputDescription.value = ""
   formInputType.value = ""
   formInputCategory.value = ""
   formInputValue.value = ""
-
+  
+  loadItens()
 }
