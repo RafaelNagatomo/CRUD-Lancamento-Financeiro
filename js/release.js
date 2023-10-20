@@ -17,7 +17,6 @@ const modalInputValue = document.querySelector('#m-value')
 
 const modalEdit = document.getElementById("modal-edit")
 
-
 let index
 let op
 const data = []
@@ -33,48 +32,24 @@ const chkRadioBtn = () => {
   }
 }
 
-// Insere uma linha no CRUD com os valores array
-
-function insertItem(item, index) {
-
-
-  tbody.insertAdjacentHTML("afterbegin",
-    `<tr id="row-${index}">
-    <td>${item.date}</td>
-     <td>${item.operation}</td>
-    <td>${item.description}</td>
-    <td>${item.type}</td>
-    <td>${item.category}</td>
-    <td>R$${item.value}</td>
-    <td>
-    <i-edit onclick="editItem(${index})" id="i-edit-${index}" class="material-symbols-outlined" >edit_note</i-edit>
-    <i-del onclick="delItem(${index})" id="i-del-${index}" class="material-symbols-outlined" >delete</i-del>
-    </td>
-    </tr>`)
-
-}
-
 function editItem(index) {
 
-  // const backgroundEdit = document.querySelector('#back-edit')
   const rowEdit = document.querySelector(`#row-${index}`)
   const rowTop = document.querySelector(`#row-${index}`).getBoundingClientRect().top
-
+  
   modalEdit.style.display = 'flex'
   modalEdit.style.top = rowTop + 'px'
   rowEdit.style.opacity = "0"
   rowEdit.style.zIndex = '-1'
   rowEdit.style.color = '#d9d9d901'
-
-  // backgroundEdit.style.display = 'block'
-
+  
   modalInputDate.value = data[index].date
   modalInputOperation.value = data[index].operation
   modalInputDescription.value = data[index].description
   modalInputType.value = data[index].type
   modalInputCategory.value = data[index].category
   modalInputValue.value = data[index].value
-
+  
   btnOk.onclick = e => {
 
     data[index].date = modalInputDate.value
@@ -83,6 +58,9 @@ function editItem(index) {
     data[index].type = modalInputType.value
     data[index].category = modalInputCategory.value
     data[index].value = modalInputValue.value
+    
+    modalEdit.style.display = 'none'
+    modalEdit.style.top = ""
 
     modalInputDate.value = ""
     modalInputOperation.value = ""
@@ -90,38 +68,55 @@ function editItem(index) {
     modalInputType.value = ""
     modalInputCategory.value = ""
     modalInputValue.value = ""
-
-    modalEdit.style.display = 'none'
-    modalEdit.style.top = ""
-
+    
+    
     loadItens()
 
   }
 }
 
-function delItem(index) {
-
+function deleteItem(index) {
+  
   let result = confirm("Are you sure, you want to delete this item?")
 
   if (result == true) {
     data.splice(index, 1)
     loadItens()
   }
-
+  
 }
 
 function loadItens() {
-
+  
   tbody.innerHTML = ''
-
+  
   data.forEach((item, index) => {
     insertItem(item, index)
-
+    
   })
 }
 
-btnInput.onclick = e => {
+// Insere uma linha no CRUD com os valores no array "data"
 
+function insertItem(item, index) {
+
+  tbody.insertAdjacentHTML("afterbegin",
+    `<tr id="row-${index}">
+    <td>${item.date}</td>
+     <td>${item.operation}</td>
+    <td>${item.description}</td>
+    <td>${item.type}</td>
+    <td>${item.category}</td>
+    <td>R$ ${item.value}</td>
+    <td>
+    <i-edit onclick="editItem(${index})" id="i-edit-${index}" class="material-symbols-outlined" >edit_note</i-edit>
+    <i-del onclick="deleteItem(${index})" id="i-del-${index}" class="material-symbols-outlined" >delete</i-del>
+    </td>
+    </tr>`)
+}
+
+
+btnInput.onclick = e => {
 
   chkRadioBtn()
 
