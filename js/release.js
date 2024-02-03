@@ -6,7 +6,6 @@ const formInputDescription = document.querySelector('#r-description')
 const formInputType = document.querySelector('#r-type')
 const formInputCategory = document.querySelector('#r-category')
 const formInputValue = document.querySelector('#r-value')
-const btnOk = document.querySelector('#i-ok')
 
 const modalInputDate = document.querySelector('#m-date')
 const modalInputOperation = document.querySelector('#m-operation')
@@ -16,6 +15,11 @@ const modalInputCategory = document.querySelector('#m-category')
 const modalInputValue = document.querySelector('#m-value')
 
 const modalEdit = document.getElementById("modal-edit")
+const btnOk = document.querySelector('#i-ok')
+
+const modalDelete = document.getElementById('modal-delete')
+const btnOkDelete = document.querySelector('#i-ok-delete')
+const btnCancel = document.querySelector('#i-cancel-delete')
 
 let index
 let op
@@ -32,16 +36,11 @@ const chkRadioBtn = () => {
   }
 }
 
-function editItem(index) {
+//Edita informacoes inseridas
 
-  const rowEdit = document.querySelector(`#row-${index}`)
-  const rowTop = document.querySelector(`#row-${index}`).getBoundingClientRect().top
+function editItem(index) {
   
-  modalEdit.style.display = 'flex'
-  modalEdit.style.top = rowTop + 'px'
-  rowEdit.style.opacity = "0"
-  rowEdit.style.zIndex = '-1'
-  rowEdit.style.color = '#d9d9d901'
+  modalEdit.showModal()
   
   modalInputDate.value = data[index].date
   modalInputOperation.value = data[index].operation
@@ -50,6 +49,8 @@ function editItem(index) {
   modalInputCategory.value = data[index].category
   modalInputValue.value = data[index].value
   
+  //Botao "ok" dentro da modal Edit
+
   btnOk.onclick = e => {
 
     data[index].date = modalInputDate.value
@@ -59,8 +60,7 @@ function editItem(index) {
     data[index].category = modalInputCategory.value
     data[index].value = modalInputValue.value
     
-    modalEdit.style.display = 'none'
-    modalEdit.style.top = ""
+    modalEdit.close()
 
     modalInputDate.value = ""
     modalInputOperation.value = ""
@@ -69,22 +69,33 @@ function editItem(index) {
     modalInputCategory.value = ""
     modalInputValue.value = ""
     
-    
     loadItens()
 
   }
 }
+
+//Deleta linha escolhida abrindo "modal-delete"
 
 function deleteItem(index) {
   
-  let result = confirm("Are you sure, you want to delete this item?")
-
-  if (result == true) {
-    data.splice(index, 1)
-    loadItens()
-  }
+  modalDelete.showModal()
   
+  btnOkDelete.onclick = e => {
+   
+    data.splice(index, 1)
+    modalDelete.close()
+
+    loadItens()
+  
+  }
+
+  btnCancel.onclick = e => {
+    modalDelete.close()
+  }
+
 }
+
+//Carrega todos itens
 
 function loadItens() {
   
@@ -107,7 +118,7 @@ function insertItem(item, index) {
     <td>${item.description}</td>
     <td>${item.type}</td>
     <td>${item.category}</td>
-    <td>R$ ${item.value}</td>
+    <td>$ ${item.value}</td>
     <td>
     <i-edit onclick="editItem(${index})" id="i-edit-${index}" class="material-symbols-outlined" >edit_note</i-edit>
     <i-del onclick="deleteItem(${index})" id="i-del-${index}" class="material-symbols-outlined" >delete</i-del>
