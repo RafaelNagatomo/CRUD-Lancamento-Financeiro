@@ -1,0 +1,91 @@
+@media all and (max-width: 1280px) {
+  html {
+    font-size: 60%;
+  }
+
+  form,
+  h2,
+  .r-Crud {
+    width: 80vw;
+    /* margin: auto; */
+  }
+
+  .sidebar {
+    width: 7.5rem;
+  }
+
+  p,
+  button > span > span {
+    display: none;
+  }
+
+  .form input {
+    width: 9.5rem;
+  }
+}
+
+@media all and (min-width: 769px) and (max-width: 1000px) {
+  th,
+  label,
+  span,
+  #r-btnInput {
+    font-size: 1.4rem;
+  }
+
+  form,
+  h2,
+  .r-Crud {
+    flex-direction: column;
+    width: 100vw;
+    position: relative;
+    left: -8rem;
+  }
+}
+
+@media all and (min-width: 321px) and (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  form,
+  h2,
+  .r-Crud {
+    flex-direction: column;
+    width: 80vw;
+    position: relative;
+    left: -10rem;
+  }
+
+  .form {
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+  }
+
+  .form input,
+  #r-btnInput {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  td {
+    display: flex;
+    width: 100vw;
+    max-width: 90%;
+    height: 3rem;
+    margin-left: 10rem;
+  }
+
+  i-del {
+    left: 10rem;
+  }
+
+  i-edit {
+    margin: 0;
+  }
+}
