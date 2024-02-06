@@ -104,7 +104,6 @@ h2,
 
 .form input {
   max-width: 13rem;
-  /* width: 10em; */
   height: 3rem;
   margin: 0.5rem 0.5rem 0 0;
   border: none;
@@ -240,8 +239,8 @@ i-del {
 
 /* modal's icons */
 
+/*icon ok of modal edit */
 #i-ok {
-  /*icon ok of modal edit */
   float: right;
   color: rgba(0, 128, 0, 0.7);
   font-size: 4rem;
