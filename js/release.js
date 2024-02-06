@@ -35,25 +35,32 @@ const data = [],
 
   };
 
-//Edit function and load item
+//Edit function, open modal edit and load item
 
 function editItem(a) {
 
   modalEdit.showModal(),
+
     (modalInputDate.value = data[a].date),
     (modalInputOperation.value = data[a].operation),
     (modalInputDescription.value = data[a].description),
     (modalInputType.value = data[a].type),
     (modalInputCategory.value = data[a].category),
     (modalInputValue.value = data[a].value),
+
+    //Edit modal's 'OK' button
+
     (btnOk.onclick = () => {
-      (data[a].date = modalInputDate.value),
+
+        (data[a].date = modalInputDate.value),
         (data[a].operation = modalInputOperation.value),
         (data[a].description = modalInputDescription.value),
         (data[a].type = modalInputType.value),
         (data[a].category = modalInputCategory.value),
         (data[a].value = modalInputValue.value),
+
         modalEdit.close(),
+
         (modalInputDate.value = ""),
         (modalInputOperation.value = ""),
         (modalInputDescription.value = ""),
@@ -66,16 +73,29 @@ function editItem(a) {
     });
 }
 
-//Delete function
+//Delete function and open delete modal
 
 function deleteItem(a) {
 
   modalDelete.showModal(),
+
+    //Delete modal's 'OK' button
+
     (btnOkDelete.onclick = () => {
-      data.splice(a, 1), modalDelete.close(), loadItens();
+      data.splice(a, 1), 
+
+      modalDelete.close(), 
+
+      loadItens();
+
     }),
+
+    //Delete cancel button
+
     (btnCancel.onclick = () => {
+
       modalDelete.close();
+
     });
 
 }
