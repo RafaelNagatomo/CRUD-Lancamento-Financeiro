@@ -118,7 +118,7 @@ function insertItem(a, b) {
     `<tr id="row-${b}">
 
     <td>${a.date}</td>
-     <td>${a.operation}</td>
+    <td>${a.operation}</td>
     <td>${a.description}</td>
     <td>${a.type}</td>
     <td>${a.category}</td>

@@ -2,11 +2,11 @@
 
 <h3>Ver demo 👉 https://crud-financial-manager.netlify.app</h3>
 
-**Este CRUD é um fragmento de um dos projetos desenvolvido por mim chamado Financial Manager que é um dashboard financeiro em uma aplicação web para gerenciar gastos pessoais.**
+**Este CRUD é um fragmento de um dos meus projetos, em desenvolvimento chamado Financial Manager, que é um dashboard financeiro em uma aplicação web, para gerenciar gastos pessoais.**
 
 <h2>CRUD em Javascript Puro</h2>
 
-CRUD criado com Javascript puro simulando um app de lançamentos de receitas e despesas, com modal na função 'Edit' e 'Delete'.
+Criado com Javascript puro, simula um app de lançamentos de receitas e despesas, com modal na função 'Edit' e 'Delete'.
 
 Tecnologias usadas:
 
